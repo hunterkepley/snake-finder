@@ -9,7 +9,7 @@ def main():
         line_count = 0
         for row in csv_reader:
             if line_count == 0:
-                print(f'\nWelcome to Snake Finder v0.1.3\n\nAll column names are {", ".join(row)}\n')
+                print(f'\nWelcome to Snake Finder v0.1.5\n\nAll column names are {", ".join(row)}\n')
                 line_count += 1
             else:
                 all_map_bans[(row[8])] += 1
@@ -21,9 +21,9 @@ def main():
         print(f'Done reading {line_count} lines')
 
     print("\n--------------------------------\n\n\tMAP PICKS:\n")
-    for i in range(len(all_map_picks)):
-        if list(all_map_picks.keys())[i] != '':
-            print(f'{list(all_map_picks)[i]} picked {list(all_map_picks)[i]} times') 
+    for key, value in all_map_picks.items():
+        if key != '':
+            print(f'{key} picked {value} times') 
 
 
 
